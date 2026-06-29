@@ -183,14 +183,7 @@ export default function Hero({ content, onChange, isEditMode, onRegisterClick }:
           </div>
         </div>
 
-        {/* Call to action button to stimulate response */}
-        <button
-          onClick={onRegisterClick}
-          className="mt-10 px-8 py-4 sm:px-10 rounded-full bg-linear-to-r from-[#00A3FF] to-[#00E5FF] text-white font-extrabold text-base shadow-lg shadow-[#00A3FF]/40 hover:shadow-[#00A3FF]/60 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer uppercase tracking-wider flex items-center gap-2.5 group"
-        >
-          Đăng Ký Tham Gia Ngay
-          <ArrowRight className="h-5 w-5 group-hover:translate-x-1.5 transition-transform stroke-[2.5]" />
-        </button>
+
 
       </div>
     </section>
