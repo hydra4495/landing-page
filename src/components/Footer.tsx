@@ -43,7 +43,7 @@ export default function Footer() {
 
           {/* Row 5: Copyright Info */}
           <div className="text-xs sm:text-sm font-bold text-white/90 mt-2 pt-2 border-t border-white/5">
-            © 2024 Công ty Cổ phần Quỹ đầu tư mạo hiểm Thành phố Hồ Chí Minh
+            © 2026 Công ty Cổ phần Quỹ đầu tư mạo hiểm Thành phố Hồ Chí Minh
           </div>
 
         </div>
