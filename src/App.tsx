@@ -18,14 +18,13 @@ import Criteria from './components/Criteria';
 import Submission from './components/Submission';
 import RegisterModal from './components/RegisterModal';
 import Footer from './components/Footer';
-import BuilderPanel from './components/BuilderPanel';
 import SectionWrapper from './components/SectionWrapper';
 import { DEFAULT_SECTIONS, DEFAULT_CONTENT } from './data';
 import { SectionConfig, LandingPageContent } from './types';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isEditMode, setIsEditMode] = useState(true); // Default enabled so users see they can edit instantly
+  const isEditMode = false;
 
   // Initialize state from local storage or defaults
   const [sections, setSections] = useState<SectionConfig[]>(() => {
@@ -184,16 +183,6 @@ export default function App() {
   return (
     <div id="app" className="min-h-screen bg-white font-sans text-slate-900 antialiased selection:bg-orange-500/10 selection:text-orange-950 pb-20">
       
-      {/* Floating Interactive Live Builder Control Panel */}
-      <BuilderPanel
-        sections={sections}
-        onReorder={setSections}
-        isEditMode={isEditMode}
-        onToggleEditMode={() => setIsEditMode(!isEditMode)}
-        onReset={handleReset}
-        onSave={handleSave}
-      />
-
       {/* Navigation Header */}
       <Header onRegisterClick={() => setIsModalOpen(true)} />
 
