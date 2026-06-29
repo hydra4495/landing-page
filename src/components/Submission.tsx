@@ -31,21 +31,21 @@ export default function Submission({ content, onChange, isEditMode }: Submission
   };
 
   return (
-    <section id="submission" className="py-20 bg-slate-50 text-slate-800 relative overflow-hidden">
+    <section id="submission" className="py-24 sm:py-28 bg-white text-stone-800 relative overflow-hidden border-t border-stone-200/40">
       {/* Decorative subtle background accents */}
-      <div className="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 bg-orange-100 rounded-full blur-3xl opacity-30 pointer-events-none" />
+      <div className="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl font-extrabold tracking-normal text-stone-900 sm:text-4xl lg:text-5xl leading-tight">
             <EditableText
               value={data.title}
               onChange={(val) => handleUpdate('title', val)}
               isEditMode={isEditMode}
               as="span"
             />{' '}
-            <span className="text-blue-600 relative inline-block">
+            <span className="text-orange-600 relative inline-block">
               <EditableText
                 value={data.titleHighlight}
                 onChange={(val) => handleUpdate('titleHighlight', val)}
@@ -57,15 +57,15 @@ export default function Submission({ content, onChange, isEditMode }: Submission
           </h2>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-10">
           {/* Organizer Card Info */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 shadow-xs hover:shadow-md transition-shadow">
-            <div className="flex gap-4 items-start">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
-                <Landmark className="h-5 w-5" />
+          <div className="bg-[#FAF9F5] rounded-2xl p-6 sm:p-8 border border-stone-200/70 border-l-4 border-l-orange-500 shadow-xs hover:shadow-md transition-all">
+            <div className="flex gap-5 items-start">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-100/70 text-orange-600">
+                <Landmark className="h-6 w-6 stroke-[2.5]" />
               </div>
-              <div className="space-y-2">
-                <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wider">
+              <div className="space-y-3 flex-1">
+                <h3 className="text-xs font-bold text-stone-500 uppercase tracking-widest">
                   <EditableText
                     value={data.organizerLabel}
                     onChange={(val) => handleUpdate('organizerLabel', val)}
@@ -73,7 +73,7 @@ export default function Submission({ content, onChange, isEditMode }: Submission
                     as="span"
                   />
                 </h3>
-                <p className="text-base sm:text-lg font-semibold text-slate-900 leading-relaxed">
+                <p className="text-base sm:text-lg font-bold text-stone-900 leading-relaxed">
                   <EditableText
                     value={data.organizerContent}
                     onChange={(val) => handleUpdate('organizerContent', val)}
@@ -87,10 +87,10 @@ export default function Submission({ content, onChange, isEditMode }: Submission
           </div>
 
           {/* Submission Methods Section */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div className="flex items-center gap-2">
               <ChevronRight className="h-5 w-5 text-orange-500 stroke-[3]" />
-              <h3 className="text-lg font-extrabold text-slate-900">
+              <h3 className="text-lg sm:text-xl font-extrabold text-stone-900 tracking-normal">
                 <EditableText
                   value={data.methodLabel}
                   onChange={(val) => handleUpdate('methodLabel', val)}
@@ -100,19 +100,19 @@ export default function Submission({ content, onChange, isEditMode }: Submission
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Method 1: Email Submission */}
-              <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-dashed border-blue-200 hover:border-blue-400 transition-colors relative group">
-                <div className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-blue-50 text-blue-600 group-hover:scale-110 transition-transform">
+              <div className="bg-[#FAF9F5] rounded-2xl p-6 sm:p-8 border-2 border-dashed border-orange-200/95 hover:border-orange-500 transition-colors relative group">
+                <div className="absolute top-5 right-5 flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-orange-600 group-hover:scale-110 transition-transform shadow-3xs">
                   <Send className="h-4 w-4" />
                 </div>
                 
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 mb-5">
-                  <Mail className="h-6 w-6" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100/70 text-orange-600 mb-6 shadow-3xs">
+                  <Mail className="h-6 w-6 stroke-[2.5]" />
                 </div>
 
-                <div className="space-y-2">
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                <div className="space-y-3">
+                  <h4 className="text-xs font-bold text-stone-500 uppercase tracking-widest">
                     <EditableText
                       value={data.emailLabel}
                       onChange={(val) => handleUpdate('emailLabel', val)}
@@ -120,29 +120,31 @@ export default function Submission({ content, onChange, isEditMode }: Submission
                       as="span"
                     />
                   </h4>
-                  <p className="text-lg font-black text-blue-600 break-all font-mono">
-                    <EditableText
-                      value={data.emailContent}
-                      onChange={(val) => handleUpdate('emailContent', val)}
-                      isEditMode={isEditMode}
-                      as="span"
-                    />
+                  <p className="text-lg sm:text-xl font-extrabold text-orange-600 break-all font-sans hover:underline">
+                    <a href={`mailto:${data.emailContent}`}>
+                      <EditableText
+                        value={data.emailContent}
+                        onChange={(val) => handleUpdate('emailContent', val)}
+                        isEditMode={isEditMode}
+                        as="span"
+                      />
+                    </a>
                   </p>
                 </div>
               </div>
 
               {/* Method 2: Physical / Hardcopy Submission */}
-              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 shadow-xs hover:shadow-md transition-shadow relative group">
-                <div className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 text-orange-600 group-hover:scale-110 transition-transform">
+              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200/90 shadow-sm hover:border-orange-500 hover:shadow-xl transition-all relative group">
+                <div className="absolute top-5 right-5 flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-orange-600 group-hover:scale-110 transition-transform shadow-3xs">
                   <MapPin className="h-4 w-4" />
                 </div>
 
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 text-orange-600 mb-5">
-                  <Landmark className="h-6 w-6" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100/70 text-orange-600 mb-6 shadow-3xs">
+                  <Landmark className="h-6 w-6 stroke-[2.5]" />
                 </div>
 
-                <div className="space-y-2">
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                <div className="space-y-3">
+                  <h4 className="text-xs font-bold text-stone-500 uppercase tracking-widest">
                     <EditableText
                       value={data.physicalLabel}
                       onChange={(val) => handleUpdate('physicalLabel', val)}
@@ -150,7 +152,7 @@ export default function Submission({ content, onChange, isEditMode }: Submission
                       as="span"
                     />
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                  <p className="text-xs sm:text-sm text-stone-600 font-semibold leading-relaxed">
                     <EditableText
                       value={data.physicalContent}
                       onChange={(val) => handleUpdate('physicalContent', val)}

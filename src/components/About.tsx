@@ -20,13 +20,13 @@ export default function About({ content, onChange, isEditMode }: AboutProps) {
   };
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-24 sm:py-28 bg-[#FAF9F5]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
+        <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 items-center">
           
           {/* Left Column: Text */}
-          <div className="space-y-6">
-            <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
+          <div className="space-y-8">
+            <h2 className="text-3xl font-extrabold tracking-normal text-stone-900 sm:text-4xl lg:text-5xl leading-tight">
               <EditableText
                 value={content.title}
                 onChange={(val) => handleUpdate('title', val)}
@@ -43,7 +43,7 @@ export default function About({ content, onChange, isEditMode }: AboutProps) {
               </span>
             </h2>
             
-            <div className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal whitespace-pre-line space-y-4">
+            <div className="text-sm sm:text-base md:text-lg text-stone-700 leading-relaxed font-medium whitespace-pre-line space-y-5">
               <EditableText
                 value={content.desc}
                 onChange={(val) => handleUpdate('desc', val)}
@@ -56,7 +56,7 @@ export default function About({ content, onChange, isEditMode }: AboutProps) {
 
           {/* Right Column: Image */}
           <div className="relative">
-            <div className="absolute -inset-1 rounded-2xl bg-linear-to-tr from-orange-500 to-amber-400 opacity-20 blur-lg" />
+            <div className="absolute -inset-1.5 rounded-2xl bg-linear-to-tr from-orange-500 to-amber-400 opacity-25 blur-xl" />
             
             {isEditMode && (
               <div className="absolute top-4 right-4 z-20">
@@ -82,11 +82,11 @@ export default function About({ content, onChange, isEditMode }: AboutProps) {
               </div>
             )}
 
-            <div className="relative overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 shadow-xl">
+            <div className="relative overflow-hidden rounded-2xl border-2 border-stone-200 bg-stone-100 shadow-2xl">
               <img
                 src={content.imageUrl || "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80"}
                 alt="Brand Identity Design Materials"
-                className="w-full object-cover h-[260px] sm:h-[320px] hover:scale-105 transition-transform duration-500"
+                className="w-full object-cover h-[300px] sm:h-[380px] hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
             </div>

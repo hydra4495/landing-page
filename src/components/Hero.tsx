@@ -60,9 +60,9 @@ export default function Hero({ content, onChange, isEditMode, onRegisterClick }:
   return (
     <section 
       id="hero" 
-      className="relative flex min-h-[580px] sm:min-h-[640px] md:min-h-[720px] flex-col justify-center items-center py-20 px-4 text-center overflow-hidden bg-cover bg-center"
+      className="relative flex min-h-[640px] sm:min-h-[720px] md:min-h-[800px] flex-col justify-center items-center py-24 px-4 text-center overflow-hidden bg-cover bg-center"
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.65)), url('${content.imageUrl || "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1920&q=80"}')`
+        backgroundImage: `linear-gradient(to bottom, rgba(20, 16, 12, 0.45), rgba(12, 9, 8, 0.75)), url('${content.imageUrl || "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1920&q=80"}')`
       }}
     >
       {/* Dynamic Background Image URL Editor for visual site building */}
@@ -96,26 +96,26 @@ export default function Hero({ content, onChange, isEditMode, onRegisterClick }:
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-96 w-96 rounded-full bg-orange-600/15 blur-3xl" />
 
       {/* Glassmorphic premium card container to make fonts perfectly readable and pop */}
-      <div className="mx-auto max-w-4xl z-10 flex flex-col items-center bg-slate-950/45 backdrop-blur-[4px] px-6 py-10 sm:px-12 sm:py-14 rounded-3xl border border-white/10 shadow-2xl">
+      <div className="mx-auto max-w-4xl z-10 flex flex-col items-center bg-stone-950/70 backdrop-blur-md px-6 py-12 sm:px-14 sm:py-16 rounded-3xl border border-amber-500/20 shadow-[0_25px_60px_rgba(249,115,22,0.2)]">
         {/* National/Global Contest Badge */}
-        <div className="inline-flex items-center gap-1.5 rounded-full border border-orange-400/40 bg-orange-500/20 px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-orange-300 mb-6 drop-shadow-md">
+        <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-5 py-2 text-xs font-extrabold uppercase tracking-widest text-amber-300 mb-6 drop-shadow-md">
           <EditableText
             value={content.badge}
             onChange={(val) => handleUpdate('badge', val)}
             isEditMode={isEditMode}
-            className="text-xs font-bold tracking-wider uppercase text-orange-300"
+            className="text-xs font-bold tracking-widest uppercase text-amber-300"
           />
-          <ArrowRight className="h-3.5 w-3.5 stroke-[3.5]" />
+          <ArrowRight className="h-3.5 w-3.5 stroke-[3.5] text-amber-400" />
         </div>
 
         {/* Big Bold Title */}
-        <h1 className="text-3xl font-black tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl font-sans leading-tight w-full max-w-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+        <h1 className="text-3xl font-extrabold tracking-wide text-white sm:text-4xl md:text-5xl lg:text-6xl font-sans leading-tight w-full max-w-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
           <EditableText
             value={content.title}
             onChange={(val) => handleUpdate('title', val)}
             isEditMode={isEditMode}
             as="span"
-            className="block w-full text-center text-white font-black"
+            className="block w-full text-center text-white font-extrabold"
           />
           <span className="block mt-4 relative inline-block text-orange-400 pb-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
             <EditableText
@@ -123,66 +123,74 @@ export default function Hero({ content, onChange, isEditMode, onRegisterClick }:
               onChange={(val) => handleUpdate('titleHighlight', val)}
               isEditMode={isEditMode}
               as="span"
-              className="text-orange-400 font-black"
+              className="text-orange-400 font-extrabold"
             />
             {/* Custom golden underline bar like in standard designs */}
-            <span className="absolute bottom-0 left-0 h-1.5 w-full bg-orange-400 rounded-full" />
+            <span className="absolute bottom-0 left-0 h-1 w-full bg-linear-to-r from-orange-500 to-amber-400 rounded-full" />
           </span>
         </h1>
 
         {/* Description Subtitle */}
-        <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg text-slate-100 font-semibold leading-relaxed font-sans drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+        <p className="mx-auto mt-8 max-w-2xl text-base sm:text-lg text-stone-200 font-semibold leading-relaxed font-sans drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
           <EditableText
             value={content.desc}
             onChange={(val) => handleUpdate('desc', val)}
             isEditMode={isEditMode}
             isMultiline={true}
             as="span"
-            className="text-slate-100 font-medium"
+            className="text-stone-200 font-medium"
           />
         </p>
 
         {/* Countdown Area */}
-        <div className="mt-8 sm:mt-10 flex flex-col items-center w-full">
-          <span className="text-xs font-black text-slate-200 uppercase tracking-widest mb-4 bg-slate-900/60 px-4 py-1.5 rounded-full border border-white/5 shadow-xs drop-shadow-md">
+        <div className="mt-8 sm:mt-12 flex flex-col items-center w-full">
+          <span className="text-xs font-bold text-amber-300/90 uppercase tracking-widest mb-5 bg-stone-900/80 px-5 py-2 rounded-full border border-amber-500/10 shadow-xs drop-shadow-md">
             Hạn cuối đăng ký: 17h00 ngày 06/07/2026
           </span>
 
-          <div className="flex gap-3 sm:gap-4">
+          <div className="flex gap-4 sm:gap-5">
             {/* Days */}
             <div className="flex flex-col items-center">
-              <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-xl bg-slate-950/75 border border-slate-800/80 shadow-md backdrop-blur-xs">
-                <span className="text-xl sm:text-2xl font-extrabold text-white font-mono tracking-tight">{timeLeft.days}</span>
+              <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-stone-950/90 border border-amber-500/20 shadow-lg backdrop-blur-xs">
+                <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">{timeLeft.days}</span>
               </div>
-              <span className="mt-2 text-[10px] font-bold text-slate-400 uppercase tracking-wide">Ngày</span>
+              <span className="mt-2.5 text-[10px] font-bold text-stone-400 uppercase tracking-wider">Ngày</span>
             </div>
 
             {/* Hours */}
             <div className="flex flex-col items-center">
-              <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-xl bg-slate-950/75 border border-slate-800/80 shadow-md backdrop-blur-xs">
-                <span className="text-xl sm:text-2xl font-extrabold text-white font-mono tracking-tight">{timeLeft.hours}</span>
+              <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-stone-950/90 border border-amber-500/20 shadow-lg backdrop-blur-xs">
+                <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">{timeLeft.hours}</span>
               </div>
-              <span className="mt-2 text-[10px] font-bold text-slate-400 uppercase tracking-wide">Giờ</span>
+              <span className="mt-2.5 text-[10px] font-bold text-stone-400 uppercase tracking-wider">Giờ</span>
             </div>
 
             {/* Minutes */}
             <div className="flex flex-col items-center">
-              <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-xl bg-slate-950/75 border border-slate-800/80 shadow-md backdrop-blur-xs">
-                <span className="text-xl sm:text-2xl font-extrabold text-white font-mono tracking-tight">{timeLeft.minutes}</span>
+              <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-stone-950/90 border border-amber-500/20 shadow-lg backdrop-blur-xs">
+                <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">{timeLeft.minutes}</span>
               </div>
-              <span className="mt-2 text-[10px] font-bold text-slate-400 uppercase tracking-wide">Phút</span>
+              <span className="mt-2.5 text-[10px] font-bold text-stone-400 uppercase tracking-wider">Phút</span>
             </div>
 
             {/* Seconds */}
             <div className="flex flex-col items-center">
-              <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-xl bg-slate-950/75 border border-slate-800/80 shadow-md backdrop-blur-xs">
-                <span className="text-xl sm:text-2xl font-extrabold text-orange-500 font-mono tracking-tight">{timeLeft.seconds}</span>
+              <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-stone-950/90 border border-orange-500/40 shadow-lg backdrop-blur-xs shadow-orange-500/10">
+                <span className="text-2xl sm:text-3xl font-extrabold text-orange-500 tracking-tight">{timeLeft.seconds}</span>
               </div>
-              <span className="mt-2 text-[10px] font-bold text-slate-400 uppercase tracking-wide">Giây</span>
+              <span className="mt-2.5 text-[10px] font-bold text-stone-400 uppercase tracking-wider">Giây</span>
             </div>
           </div>
         </div>
 
+        {/* Call to action button to stimulate response */}
+        <button
+          onClick={onRegisterClick}
+          className="mt-10 px-8 py-4 sm:px-10 rounded-full bg-linear-to-r from-orange-600 to-amber-500 text-white font-extrabold text-base shadow-lg shadow-orange-600/30 hover:shadow-orange-600/50 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer uppercase tracking-wider flex items-center gap-2.5 group"
+        >
+          Đăng Ký Tham Gia Ngay
+          <ArrowRight className="h-5 w-5 group-hover:translate-x-1.5 transition-transform stroke-[2.5]" />
+        </button>
 
       </div>
     </section>

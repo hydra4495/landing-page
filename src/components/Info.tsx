@@ -54,12 +54,12 @@ export default function Info({ content, onChange, isEditMode }: InfoProps) {
   };
 
   return (
-    <section id="rules" className="py-20 bg-slate-50/50 border-t border-slate-100">
+    <section id="rules" className="py-24 sm:py-28 bg-white border-t border-stone-100">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* Section Title Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl font-extrabold tracking-normal text-stone-900 sm:text-4xl lg:text-5xl leading-tight">
             <EditableText
               value={content.title}
               onChange={(val) => handleUpdate('title', val)}
@@ -75,7 +75,7 @@ export default function Info({ content, onChange, isEditMode }: InfoProps) {
               />
             </span>
           </h2>
-          <p className="mt-4 text-xs sm:text-sm text-slate-500 font-medium">
+          <p className="mt-4 text-xs sm:text-sm md:text-base text-stone-500 font-semibold tracking-wide">
             <EditableText
               value={content.subtitle}
               onChange={(val) => handleUpdate('subtitle', val)}
@@ -90,16 +90,16 @@ export default function Info({ content, onChange, isEditMode }: InfoProps) {
           {content.items.map((rule, idx) => (
             <div
               key={idx}
-              className="flex gap-4 p-6 rounded-2xl border border-slate-200/55 bg-white shadow-2xs hover:shadow-xs transition-shadow duration-300"
+              className="flex gap-5 p-6 sm:p-8 rounded-2xl border border-stone-200/80 bg-stone-50/25 hover:bg-stone-50/60 shadow-xs hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
             >
               {/* Left Column: Icon */}
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-50 text-orange-600 shadow-3xs">
-                {getIcon(rule.icon, "h-6 w-6")}
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-100/60 text-orange-600 shadow-xs">
+                {getIcon(rule.icon, "h-6 w-6 stroke-[2.5]")}
               </div>
 
               {/* Right Column: Title & Description */}
-              <div className="space-y-2 w-full">
-                <h3 className="text-base font-bold text-slate-900">
+              <div className="space-y-3.5 w-full">
+                <h3 className="text-base sm:text-lg font-extrabold text-stone-900 leading-snug">
                   <EditableText
                     value={rule.title}
                     onChange={(val) => handleUpdateItem(idx, 'title', val)}
@@ -107,7 +107,7 @@ export default function Info({ content, onChange, isEditMode }: InfoProps) {
                     as="span"
                   />
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-medium">
                   <EditableText
                     value={rule.description}
                     onChange={(val) => handleUpdateItem(idx, 'description', val)}

@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -12,22 +12,12 @@ export default function Footer() {
           </p>
 
           {/* Row 2: Address */}
-          <div className="flex items-center gap-3">
-            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-[#4e251b] text-white">
+          <div className="flex items-start gap-3">
+            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-[#4e251b] text-white mt-0.5">
               <MapPin className="h-3.5 w-3.5 text-white" />
             </div>
-            <span className="text-xs sm:text-sm font-bold text-white/95">
-              Địa chỉ: TP. Hồ Chí Minh, Việt Nam
-            </span>
-          </div>
-
-          {/* Row 3: Hotline */}
-          <div className="flex items-center gap-3">
-            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-[#4e251b] text-white">
-              <Phone className="h-3.5 w-3.5 text-white" />
-            </div>
-            <span className="text-xs sm:text-sm font-bold text-[#f97316]">
-              Hotline: (028) 3827 1111
+            <span className="text-xs sm:text-sm font-bold text-white/95 leading-relaxed">
+              Địa chỉ: Công ty Cổ phần Quỹ đầu tư mạo hiểm Thành phố Hồ Chí Minh, 123 Trương Định, phường Xuân Hòa, Thành phố Hồ Chí Minh.
             </span>
           </div>
 
