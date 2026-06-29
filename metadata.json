@@ -1,0 +1,6 @@
+{
+  "name": "Landing Page",
+  "description": "Một trang Landing Page hiện đại, tối ưu hóa giao diện và tích hợp trình giả lập tương tác cho dịch vụ công nghệ SaaS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
